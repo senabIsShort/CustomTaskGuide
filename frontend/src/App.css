@@ -1,0 +1,100 @@
+:root {
+  --primary-color:hsl(200, 100%, 70%);
+  --secondary-color:hsl(200, 100%, 50%);
+  --secondary-color-accent:hsl(200, 100%, 85%);
+  --secondary-color-darker: hsl(200, 100%, 55%);
+  --contrast-color: hsl(350, 100%, 70%);
+  --contrast-color-darker: hsl(350, 100%, 65%);
+  --contrast-color-accent: hsl(350, 100%, 75%);
+  --greenlight-color: hsl(120, 61%, 50%);
+  --greenlight-color-darker: hsl(120, 61%, 45%);
+  --greenlight-color-accent: hsl(120, 61%, 60%);
+  scrollbar-width: none; /* only compatible with Firefox */
+}
+
+main {
+  height: calc(100% -3rem); /* give <main> element the rest of the space occupied by <nav> */
+  position: relative;
+  top: 3rem; /* <main> element below the <nav> */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main ul {
+  list-style: none;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  row-gap: 0.5rem;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+main ul li {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 250px;
+  border: 2px var(--contrast-color) solid;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.task-title {
+  padding: 1rem;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background-color: var(--primary-color);
+  font-weight: bolder;
+  text-shadow: 2px 2px 1px var(--secondary-color-accent);
+}
+
+.completed-task {
+  border: 2px var(--greenlight-color) solid;
+}
+
+main ul li p {
+  padding: 0 1rem;
+  flex: 0 0 80%;
+}
+
+.control-btns {
+  padding: 0 1rem 1rem 1rem;
+}
+
+.btn {
+  margin: 0 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border-style: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-color-accent);
+}
+
+.btn-secondary:active {
+  background-color: var(--primary-color);
+}
+
+.btn-important {
+  background-color: var(--contrast-color);
+  border: 1px solid var(--contrast-color);
+}
+
+.btn-important:hover {
+  background-color: var(--contrast-color-accent);
+}
+
+.btn-important:active {
+  background-color: var(--contrast-color-darker);
+}

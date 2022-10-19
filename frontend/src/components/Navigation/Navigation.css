@@ -1,0 +1,77 @@
+nav {
+	position: fixed;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 3rem;
+	width: 100%;
+	background-color: var(--primary-color);
+	z-index: 1; /* On top of the <main> element */
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	list-style: none;
+}
+
+nav ul li {
+	display: inline-block;
+	box-sizing: border-box;
+}
+
+.nav-title {
+	padding: 0.75rem 2rem;
+	font-weight: bolder;
+	text-shadow: 2px 2px 1px var(--secondary-color-accent);
+	background-color: var(--secondary-color);
+	border-radius: 50px;
+	user-select: none;
+}
+
+.new-task-btn {
+	padding: 0.75rem;
+	color: black;
+	background-color: var(--secondary-color);
+	border-radius: 8px;
+	border: 1px solid var(--secondary-color);
+}
+
+.new-task-btn:hover {
+	background-color: var(--secondary-color-accent);
+}
+
+.new-task-btn:active {
+	background-color: var(--secondary-color-darker);
+}
+
+.nav-link {
+	margin: 0;
+	padding: 1rem;
+	border:none;
+	background-color:var(--primary-color);
+	cursor: pointer;
+}
+
+.active {
+	background-color: var(--secondary-color);
+}
+
+.nav-link:hover {
+	background-color: var(--secondary-color-accent);
+}
+
+@media (max-width: 400px) {
+	.nav-title {
+		padding: 0.75rem 0.75rem;
+	}
+
+	.new-task-btn {
+		padding: 0.75rem 0.5rem;
+	}
+
+	.nav-link {
+		padding: 1rem 0.5rem;
+	}
+}
