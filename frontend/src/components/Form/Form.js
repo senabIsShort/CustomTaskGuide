@@ -11,6 +11,7 @@ function Form (props) {
 					value={props.activeItem.title} 
 					onChange={props.handleTitleChange} 
 					placeholder="What's your Task ?"
+					autoFocus
 				/>
 			</div>
 			<div className="status">
