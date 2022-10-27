@@ -1,0 +1,9 @@
+.welcome-wrapper {
+    padding: 1rem 17rem;
+}
+
+@media (max-width: 400px) {
+	.welcome-wrapper {
+        padding: 1rem 2rem;
+    }
+}

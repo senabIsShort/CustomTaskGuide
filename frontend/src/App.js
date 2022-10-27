@@ -3,6 +3,7 @@ import './App.css' ;
 import Modal from "./components/Modal/Modal";
 import Form from "./components/Form/Form";
 import Navigation from "./components/Navigation/Navigation";
+import Welcome from "./components/Welcome/Welcome";
 
 
 function App () {
@@ -101,38 +102,44 @@ function App () {
       (item) => item.completed === viewCompleted
     );
 
-    return newItems.map((item) => (
-      <li
-        key={item.id}
-        className={`${viewCompleted ? "completed-task" : ""}`}
-      >
-        <span
-          className={`task-title`}
-          title={item.description}
+    if (newItems.length === 0) {
+      return <Welcome/>
+    }
+
+    return <ul>
+        {newItems.map((item) => (
+        <li
+          key={item.id}
+          className={`${viewCompleted ? "completed-task" : ""}`}
         >
-          {item.title}
-        </span>
-        <p>
-          {item.description}
-        </p>
-        <span
-        className="control-btns"
-        >
-          <button 
-            className="btn btn-secondary"
-            onClick={() => {editItem(item); setEditing(true)}}
+          <span
+            className={`task-title`}
+            title={item.description}
           >
-            Edit
-          </button>
-          <button 
-            className="btn btn-important"
-            onClick={() => handleDelete(item)}
+            {item.title}
+          </span>
+          <p>
+            {item.description}
+          </p>
+          <span
+          className="control-btns"
           >
-            Delete
-          </button>
-        </span>
-      </li>
-    ));
+            <button 
+              className="btn btn-secondary"
+              onClick={() => {editItem(item); setEditing(true)}}
+            >
+              Edit
+            </button>
+            <button 
+              className="btn btn-important"
+              onClick={() => handleDelete(item)}
+            >
+              Delete
+            </button>
+          </span>
+        </li>
+      ))}
+    </ul>;
   };
   
   return (
@@ -143,9 +150,7 @@ function App () {
       setViewCompleted={setViewCompleted}
     />
     <main>
-      <ul>
-        {renderItems()}
-      </ul>
+      {renderItems()}
     </main>
     <Modal 
       visibility={visibility}
