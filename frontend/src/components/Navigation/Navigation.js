@@ -12,7 +12,7 @@ function Navigation (props) {
 				className="btn new-task-btn"
 				onClick={props.createItem}
 				>
-				New&nbsp;Task
+				<span aria-hidden="true">✚ </span>Add
 			</button>
 			<ul>
 				<li>
@@ -20,7 +20,7 @@ function Navigation (props) {
 						className={props.viewCompleted ? "nav-link active" : "nav-link"}
 						onClick={() => props.setViewCompleted(true)}
 						>
-						Complete
+						<span aria-hidden="true">☑ </span>Done
 					</button>
 				</li>
 				<li>
@@ -28,7 +28,7 @@ function Navigation (props) {
 						className={props.viewCompleted ? "nav-link" : "nav-link active"}
 						onClick={() => props.setViewCompleted(false)}
 						>
-						Incomplete
+						<span aria-hidden="true">☐ </span>To Do
 					</button>
 				</li>
 			</ul>

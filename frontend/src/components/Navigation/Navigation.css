@@ -48,7 +48,7 @@ nav ul li {
 
 .nav-link {
 	margin: 0;
-	padding: 1rem;
+	padding: calc(1rem - .5px) 1rem;
 	border:none;
 	background-color:var(--primary-color);
 	cursor: pointer;
@@ -72,6 +72,6 @@ nav ul li {
 	}
 
 	.nav-link {
-		padding: 1rem 0.5rem;
+		padding: calc(1rem - 1.25px) 0.5rem;
 	}
 }
