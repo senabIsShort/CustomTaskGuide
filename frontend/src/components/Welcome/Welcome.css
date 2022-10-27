@@ -2,6 +2,19 @@
     padding: 1rem 17rem;
 }
 
+.welcome-wrapper h1 {
+    padding-bottom: 2rem;
+    color: var(--contrast-color-darker);
+}
+
+.welcome-wrapper h2 {
+    color: var(--contrast-color);
+}
+
+.welcome-wrapper p b {
+    color: var(--secondary-color-darker);
+}
+
 @media (max-width: 400px) {
 	.welcome-wrapper {
         padding: 1rem 2rem;
