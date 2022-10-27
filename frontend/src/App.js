@@ -67,7 +67,12 @@ function App () {
       return localStorage.setItem("taskList", JSON.stringify(taskList));
     }
 
-    activeItem.id = taskList.length + 1;
+    if (taskList.length === 0) {
+      activeItem.id = 1;
+    }
+    else {
+      activeItem.id = taskList.at(-1).id + 1;
+    }
     taskList.push(activeItem)
     
     return localStorage.setItem("taskList", JSON.stringify(taskList));
