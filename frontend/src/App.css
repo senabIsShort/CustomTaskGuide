@@ -13,31 +13,31 @@
 }
 
 #root {
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
-  height: calc(100% - 6rem);
-  position: relative;
-  top: 3rem; /* <main> element below the <nav> */
   display: flex;
+  flex-grow: 1;
   align-items: center;
   justify-content: center;
 }
 
 footer {
-  position: relative;
-  top: 3rem;
+  margin-top: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 0.5rem 0;
 }
 
 main ul {
   margin: 0;
   list-style: none;
-  padding: 0;
+  padding: 0.5rem 0;
   height: 100%;
   width: 100%;
   display: flex;
