@@ -1,6 +1,6 @@
 import "./Navigation.css"
 
-function Navigation (props) {
+function Navigation ({ createItem, viewCompleted, setViewCompleted }) {
 	return (
 		<nav>
 			<span
@@ -10,23 +10,23 @@ function Navigation (props) {
 			</span>
 			<button 
 				className="btn new-task-btn"
-				onClick={props.createItem}
+				onClick={createItem}
 				>
 				<span aria-hidden="true">✚ </span>Add
 			</button>
 			<ul>
 				<li>
 					<button 
-						className={props.viewCompleted ? "nav-link active" : "nav-link"}
-						onClick={() => props.setViewCompleted(true)}
+						className={viewCompleted ? "nav-link active" : "nav-link"}
+						onClick={() => setViewCompleted(true)}
 						>
 						<span aria-hidden="true">☑ </span>Done
 					</button>
 				</li>
 				<li>
 					<button 
-						className={props.viewCompleted ? "nav-link" : "nav-link active"}
-						onClick={() => props.setViewCompleted(false)}
+						className={viewCompleted ? "nav-link" : "nav-link active"}
+						onClick={() => setViewCompleted(false)}
 						>
 						<span aria-hidden="true">☐ </span>To Do
 					</button>

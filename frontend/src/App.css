@@ -25,58 +25,18 @@ main {
   justify-content: center;
 }
 
-footer {
-  margin-top: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 0.5rem 0;
-}
-
-main ul {
-  margin: 0;
-  list-style: none;
-  padding: 0.5rem 0;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  row-gap: 0.5rem;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-main ul li {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 250px;
-  border: 2px var(--contrast-color) solid;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.task-title {
-  padding: 1rem;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  background-color: var(--primary-color);
-  font-weight: bolder;
-  text-shadow: 2px 2px 1px var(--secondary-color-accent);
-}
-
-.completed-task {
-  border: 2px var(--greenlight-color) solid;
-}
-
-main ul li p {
-  padding: 0 1rem;
-  flex: 0 0 80%;
-}
-
-.control-btns {
-  padding: 0 1rem 1rem 1rem;
+.task-container {
+	margin: 0;
+	list-style: none;
+	padding: 0.5rem 0;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	row-gap: 0.5rem;
+	justify-content: space-evenly;
+	align-items: center;
 }
 
 .btn {
@@ -85,36 +45,4 @@ main ul li p {
   border-style: none;
   border-radius: 4px;
   cursor: pointer;
-}
-
-.btn-secondary {
-  background-color: var(--secondary-color);
-  border: 1px solid var(--secondary-color);
-}
-
-.btn-secondary:hover {
-  background-color: var(--secondary-color-accent);
-}
-
-.btn-secondary:active {
-  background-color: var(--primary-color);
-}
-
-.btn-important {
-  background-color: var(--contrast-color);
-  border: 1px solid var(--contrast-color);
-}
-
-.btn-important:hover {
-  background-color: var(--contrast-color-accent);
-}
-
-.btn-important:active {
-  background-color: var(--contrast-color-darker);
-}
-
-@media (max-width: 400px) {
-  footer {
-    font-size: 0.8rem;
-  }
 }

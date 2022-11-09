@@ -4,6 +4,8 @@ import Modal from "./components/Modal/Modal";
 import Form from "./components/Form/Form";
 import Navigation from "./components/Navigation/Navigation";
 import Welcome from "./components/Welcome/Welcome";
+import Task from "./components/Task/Task";
+import Footer from "./components/Footer/Footer";
 
 
 function App () {
@@ -30,7 +32,7 @@ function App () {
     setTaskList(JSON.parse(localStorage.getItem("taskList")));
   }
 
-  function toggle() {
+  function toggleModal() {
     setVisibility(!visibility);
   }
 
@@ -53,7 +55,7 @@ function App () {
   }
 
   function handleSubmit () {
-    toggle();
+    toggleModal();
 
     if(editing) {
       // Find the item that's being edited and its index
@@ -94,55 +96,33 @@ function App () {
     const item = {title: "", description: "", completed: false};
 
     setActiveItem(item);
-    toggle();
+    toggleModal();
   };
 
   function editItem (item) {
     setActiveItem(item);
-    toggle();
+    toggleModal();
   }
 
-  function renderItems () {
-    const newItems = taskList.filter(
+  function renderItemsOrWelcome () {
+    const taskListItems = taskList.filter(
       (item) => item.completed === viewCompleted
     );
 
-    if (newItems.length === 0) {
+    if (taskListItems.length === 0) {
       return <Welcome/>
     }
 
-    return <ul>
-        {newItems.map((item) => (
-        <li
+    return <ul className="task-container">
+        {taskListItems.map((item) => (
+        <Task 
           key={item.id}
-          className={`${viewCompleted ? "completed-task" : ""}`}
-        >
-          <span
-            className={`task-title`}
-            title={item.description}
-          >
-            {item.title}
-          </span>
-          <p>
-            {item.description}
-          </p>
-          <span
-          className="control-btns"
-          >
-            <button 
-              className="btn btn-secondary"
-              onClick={() => {editItem(item); setEditing(true)}}
-            >
-              Edit
-            </button>
-            <button 
-              className="btn btn-important"
-              onClick={() => handleDelete(item)}
-            >
-              Delete
-            </button>
-          </span>
-        </li>
+          item={item}
+          editItem={editItem}
+          setEditing={setEditing}
+          handleDelete={handleDelete}
+          viewCompleted={viewCompleted}
+        />
       ))}
     </ul>;
   };
@@ -155,19 +135,12 @@ function App () {
       setViewCompleted={setViewCompleted}
     />
     <main>
-      {renderItems()}
+      {renderItemsOrWelcome()}
     </main>
-    <footer>
-      <div>
-        Made with <span aria-label="love">💖</span> using <a href="https://create-react-app.dev/"> create-react-app</a> and <a href="https://reactjs.org/"> React</a>
-      </div>
-      <div>
-        You can check out my projects at <a href="https://senabisshort.github.io">senabisshort.github.io</a>
-      </div>
-    </footer>
+    <Footer/>
     <Modal 
       visibility={visibility}
-      close={toggle}
+      close={toggleModal}
     >
       <Form
         handleSubmit={handleSubmit}

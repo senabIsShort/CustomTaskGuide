@@ -1,0 +1,56 @@
+.task-card {
+	display: flex;
+	flex-direction: column;
+	flex-basis: 250px;
+	border: 2px var(--contrast-color) solid;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.task-title {
+	padding: 1rem;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	background-color: var(--primary-color);
+	font-weight: bolder;
+	text-shadow: 2px 2px 1px var(--secondary-color-accent);
+}
+
+.completed-task {
+	border: 2px var(--greenlight-color) solid;
+}
+
+.task-description {
+	padding: 0 1rem;
+	flex: 0 0 80%;
+}
+
+.control-btns {
+	padding: 0 1rem 1rem 1rem;
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-color-accent);
+}
+
+.btn-secondary:active {
+  background-color: var(--primary-color);
+}
+
+.btn-important {
+  background-color: var(--contrast-color);
+  border: 1px solid var(--contrast-color);
+}
+
+.btn-important:hover {
+  background-color: var(--contrast-color-accent);
+}
+
+.btn-important:active {
+  background-color: var(--contrast-color-darker);
+}

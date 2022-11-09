@@ -1,15 +1,15 @@
 import "./Form.css"
 
-function Form (props) {
+function Form ({ handleSubmit, activeItem, handleTitleChange, handleStatusChange, handleDescriptionChange }) {
 	return (
 		<>
-		<form onSubmit={props.handleSubmit}>
+		<form onSubmit={handleSubmit}>
 			<div className="title">
 				<label>Title:</label>
 				<input 
 					type="text" 
-					value={props.activeItem.title} 
-					onChange={props.handleTitleChange} 
+					value={activeItem.title} 
+					onChange={handleTitleChange} 
 					placeholder="What's your Task ?"
 					autoFocus
 				/>
@@ -18,15 +18,15 @@ function Form (props) {
 				<label>Status: </label>
 				<input 
 					type="checkbox" 
-					checked={props.activeItem.completed} 
-					onChange={props.handleStatusChange}
+					checked={activeItem.completed} 
+					onChange={handleStatusChange}
 				/>
 			</div>
 			<div className="description">
 				<label>Description: </label>
 				<textarea 
-					value={props.activeItem.description} 
-					onChange={props.handleDescriptionChange} 
+					value={activeItem.description} 
+					onChange={handleDescriptionChange} 
 					placeholder="Any details about your Task ?"
 				/>
 			</div>

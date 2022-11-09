@@ -1,0 +1,14 @@
+footer {
+	margin-top: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0.5rem 0;
+}
+
+@media (max-width: 400px) {
+	footer {
+		font-size: 0.8rem;
+	}
+}
